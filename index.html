@@ -138,6 +138,12 @@ function sendMouselabData() {
     }, "*");
   } catch (e) {}
 }
+
+window.addEventListener("message", function(event) {
+  if (event.data && event.data.type === "request_mouselab_data") {
+    sendMouselabData();
+  }
+});
 </script>
 
 </body>
