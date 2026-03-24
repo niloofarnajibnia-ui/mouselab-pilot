@@ -127,6 +127,14 @@ loadMatrices();
 
 <!--END postHTML--></FORM>
 
+ <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<form id="sheetForm" method="POST" action="https://script.google.com/macros/s/AKfycbyJUUTlhJiHXcbjCbepkPEoGyJG6lFyDPuSD5dcaEkoXITflz8b4cfZdu-cRQjXrXuQ/exec" target="hidden_iframe" style="display:none;">
+  <input type="hidden" name="participant_id" id="sheet_participant_id">
+  <input type="hidden" name="procdata" id="sheet_procdata">
+  <input type="hidden" name="timestamp" id="sheet_timestamp">
+</form>
+
 <script>
 function sendMouselabData() {
   try {
