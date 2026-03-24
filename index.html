@@ -128,12 +128,15 @@ loadMatrices();
 <!--END postHTML--></FORM>
 
 <script>
-function getMouselabData() {
+function sendMouselabData() {
   try {
-    return document.forms["mlwebform"].elements["procdata"].value;
-  } catch (e) {
-    return "";
-  }
+    var data = document.forms["mlwebform"].elements["procdata"].value;
+    window.parent.postMessage({
+      type: "mouselab_data",
+      procdata: data,
+      time: Date.now()
+    }, "*");
+  } catch (e) {}
 }
 </script>
 
