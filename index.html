@@ -131,11 +131,13 @@ loadMatrices();
 function sendMouselabData() {
   try {
     var data = document.forms["mlwebform"].elements["procdata"].value;
+var pid = document.forms["mlwebform"].elements["subject"].value;
     window.parent.postMessage({
-      type: "mouselab_data",
-      procdata: data,
-      time: Date.now()
-    }, "*");
+  type: "mouselab_data",
+  procdata: data,
+  participant_id: pid,
+  time: Date.now()
+}, "*");
   } catch (e) {}
 }
 
