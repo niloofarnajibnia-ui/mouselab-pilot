@@ -125,4 +125,20 @@ loadMatrices();
 <!-- END MOUSELAB TABLE -->
 <!--BEGIN postHTML-->
 
-<!--END postHTML--></FORM></body></html>
+<!--END postHTML--></FORM>
+
+<script>
+function sendDataToQualtrics() {
+  try {
+    var data = document.forms["mlwebform"].elements["procdata"].value;
+
+    window.parent.postMessage({
+      type: "mouselab",
+      procdata: data,
+      time: Date.now()
+    }, "*");
+  } catch (e) {}
+}
+</script>
+
+</body></html>
