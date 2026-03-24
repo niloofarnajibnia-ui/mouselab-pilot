@@ -136,16 +136,6 @@ function getMouselabData() {
   }
 }
 </script>
-  try {
-    var data = document.forms["mlwebform"].elements["procdata"].value;
 
-    window.parent.postMessage({
-      type: "mouselab",
-      procdata: data,
-      time: Date.now()
-    }, "*");
-  } catch (e) {}
-}
-</script>
-
-</body></html>
+</body>
+</html>
