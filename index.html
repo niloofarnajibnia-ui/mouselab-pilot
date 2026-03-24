@@ -128,7 +128,14 @@ loadMatrices();
 <!--END postHTML--></FORM>
 
 <script>
-function sendDataToQualtrics() {
+function getMouselabData() {
+  try {
+    return document.forms["mlwebform"].elements["procdata"].value;
+  } catch (e) {
+    return "";
+  }
+}
+</script>
   try {
     var data = document.forms["mlwebform"].elements["procdata"].value;
 
